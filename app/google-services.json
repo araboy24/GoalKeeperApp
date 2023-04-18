@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "344494392987",
+    "project_id": "goalkeeper-74ceb",
+    "storage_bucket": "goalkeeper-74ceb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344494392987:android:a5d4e41b04912cf2fae83e",
+        "android_client_info": {
+          "package_name": "com.example.goalkeeper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "344494392987-v14p3oonraue1afm729aouk0ashopmp7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSBuTUoIGoIYvY9r4Ab0VtVXA3vRhRXVU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "344494392987-v14p3oonraue1afm729aouk0ashopmp7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
