@@ -22,4 +22,5 @@
         android:id="@+id/log_out"
         android:layout_below="@id/user_details"/>
 
+
 </RelativeLayout>
