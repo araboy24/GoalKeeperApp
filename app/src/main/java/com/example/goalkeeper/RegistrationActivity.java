@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -23,7 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class RegistrationActivity extends AppCompatActivity {
     EditText editTextEmail, editTextPassword, editTextConfirmation;
     ProgressBar progressBar;
-    MaterialButton buttonReg;
+    Button buttonReg;
     FirebaseAuth mAuth;
     TextView textViewGoLogin;
 
@@ -93,6 +94,9 @@ public class RegistrationActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(RegistrationActivity.this, "Authentication Successful.",
                                             Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(), TestLogOutActivity.class);
+                                    startActivity(intent);
+                                    finish();
                                 } else {
                                     Toast.makeText(RegistrationActivity.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();

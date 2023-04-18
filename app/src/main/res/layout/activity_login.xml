@@ -59,7 +59,7 @@
         android:layout_marginBottom="20dp"
         />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/loginbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,8 +69,9 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/design_default_color_on_secondary"
         android:text="LOGIN" />
+<!--        android:backgroundTint="@color/design_default_color_on_secondary"-->
+
 
     <ProgressBar
         android:layout_width="wrap_content"
