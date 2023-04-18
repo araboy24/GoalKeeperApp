@@ -82,9 +82,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/signup_btn"
         android:layout_below="@id/go_login"
+        android:layout_centerHorizontal="true"
         android:text="Register"/>
 <!--        android:backgroundTint="@color/material_dynamic_secondary0"-->
-<!--        android:layout_centerHorizontal="true"-->
 <!--        android:layout_margin="20dp"-->
 
 
