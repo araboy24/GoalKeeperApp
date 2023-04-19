@@ -31,4 +31,14 @@
         android:textAlignment="left"
         android:textSize="30sp"
         android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="150dp"
+        android:layout_height="79dp"
+        android:scaleX="1.75"
+        android:scaleY="1.75"
+        android:text="Complete?"
+        android:translationX="55dp"
+        android:translationY="150dp" />
 </RelativeLayout>
