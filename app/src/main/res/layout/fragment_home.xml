@@ -5,20 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
-    
+
 
     <TextView
         android:id="@+id/text_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="My Goals"
         android:textAlignment="center"
         android:textSize="50sp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/text_goal1"
@@ -33,12 +33,75 @@
         android:textStyle="bold" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBox1"
         android:layout_width="150dp"
         android:layout_height="79dp"
         android:scaleX="1.75"
         android:scaleY="1.75"
-        android:text="Complete?"
+        android:text="Ride my bike"
         android:translationX="55dp"
         android:translationY="150dp" />
+
+    <TextView
+        android:id="@+id/text_goal2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="8dp"
+        android:text="Goal 2"
+        android:textAlignment="left"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:translationX="0dp"
+        android:translationY="140dp"/>
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="150dp"
+        android:layout_height="79dp"
+        android:scaleX="1.75"
+        android:scaleY="1.75"
+        android:text="Clean"
+        android:translationX="55dp"
+        android:translationY="280dp" />
+
+    <TextView
+        android:id="@+id/text_goal3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="8dp"
+        android:text="Goal 3"
+        android:textAlignment="left"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:translationX="0dp"
+        android:translationY="270dp"/>
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="150dp"
+        android:layout_height="79dp"
+        android:scaleX="1.75"
+        android:scaleY="1.75"
+        android:text="Clean"
+        android:translationX="55dp"
+        android:translationY="400dp" />
+
+    <Button
+        android:id="@+id/plusButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFC107"
+        android:shape="oval"
+        android:text="+"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:translationX="300sp"
+        android:translationY="540sp" />
+
+
 </RelativeLayout>

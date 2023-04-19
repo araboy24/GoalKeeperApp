@@ -13,5 +13,7 @@ public class HomeFragment  extends AppCompatActivity {
         setContentView(R.layout.activity_test_log_out);
 
     }
+
+
 }
 
