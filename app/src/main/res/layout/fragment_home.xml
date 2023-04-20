@@ -86,7 +86,7 @@
         android:layout_height="79dp"
         android:scaleX="1.75"
         android:scaleY="1.75"
-        android:text="Clean"
+        android:text="Cook"
         android:translationX="55dp"
         android:translationY="400dp" />
 
@@ -102,6 +102,5 @@
         android:textStyle="bold"
         android:translationX="300sp"
         android:translationY="540sp" />
-
 
 </RelativeLayout>
