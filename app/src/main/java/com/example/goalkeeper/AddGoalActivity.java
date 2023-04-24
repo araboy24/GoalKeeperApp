@@ -29,6 +29,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -84,37 +85,53 @@ public class AddGoalActivity extends AppCompatActivity {
                     Toast.makeText(AddGoalActivity.this, "Enter Deadline", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                String regex = "^(0[1-9]|1[0-2])/([0-2][0-9]|3[0-1])/\\d{4}$";
+                String regex = "^(\\d{4})/(0?[1-9]|1[0-2])/(0?[1-9]|[12][0-9]|3[01])$";
                 Pattern pattern = Pattern.compile(regex);
                 Matcher matcher = pattern.matcher(deadline);
                 if (!matcher.matches()) {
-                    Toast.makeText(AddGoalActivity.this, "Deadline must be (MM/DD/YYYY)", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddGoalActivity.this, "Deadline must be (YYYY/MM/DD)", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                SimpleDateFormat format = new SimpleDateFormat("mm/dd/yyyy");
-                Date date;
-                Timestamp timestamp;
-                try {
-                    date = format.parse(deadline);
-                    timestamp = new Timestamp(date);
-                } catch (ParseException e) {
-                    throw new RuntimeException(e);
-                }
+//                SimpleDateFormat format = new SimpleDateFormat("mm/dd/yyyy");
+//                Date date;
+//                Timestamp timestamp;
+
+//
+//                try {
+//                    date = format.parse(deadline);
+//                    timestamp = new Timestamp(date);
+//                } catch (ParseException e) {
+//                    throw new RuntimeException(e);
+//                }
                 // Create a new goal document
                 Map<String, Object> goalData = new HashMap<>();
                 goalData.put("name", goal);
-                goalData.put("deadline", timestamp);
+                goalData.put("deadline", deadline);
                 goalData.put("is_completed", false);
 
 // Add the goal document to the "Goals" sub-collection
                 CollectionReference goalsCollection = db.collection("Users").document(userId).collection("Goals");
-                goalsCollection.add(goalData)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                String goalId = UUID.randomUUID().toString();
+                goalData.put("id", goalId);
+
+                goalsCollection.document(goalId)
+                        .set(goalData)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
-                            public void onSuccess(DocumentReference documentReference) {
+                            public void onSuccess(Void unused) {
                                 Toast.makeText(AddGoalActivity.this, "Goal added", Toast.LENGTH_SHORT).show();
                             }
+
+//                            @Override
+//                            public void onSuccess(DocumentReference documentReference) {
+////                                String goalId = documentReference.getId();
+////                                // Store the goal ID in the goal data map
+////                                goalData.put("id", goalId);
+////                                goalsCollection.add(goalData);
+//
+//                                Toast.makeText(AddGoalActivity.this, "Goal added", Toast.LENGTH_SHORT).show();
+//                            }
                         })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override

@@ -74,9 +74,10 @@ public class FinalHomeActivity extends AppCompatActivity {
                     for (DocumentSnapshot document : goalDocuments) {
 
                         String name = document.getString("name");
-                        Date deadline = document.getDate("deadline");
+                        String deadline = document.getString("deadline");
                         boolean isCompleted = document.getBoolean("is_completed");
-                        Goal goal = new Goal(name, deadline, isCompleted);
+                        String id = document.getString("id");
+                        Goal goal = new Goal(name, deadline, isCompleted, id);
                         goals.add(goal);
                     }
 

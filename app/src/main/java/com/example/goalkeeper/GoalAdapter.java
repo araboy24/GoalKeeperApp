@@ -11,8 +11,10 @@ import java.util.List;
 public class GoalAdapter extends RecyclerView.Adapter<GoalViewHolder> {
     private List<Goal> goals;
 
+
     public GoalAdapter(List<Goal> goals) {
         this.goals = goals;
+
     }
 
     @Override
@@ -25,9 +27,11 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalViewHolder> {
     @Override
     public void onBindViewHolder(GoalViewHolder holder, int position) {
         Goal goal = goals.get(position);
-        holder.nameTextView.setText(goal.getDeadlineString());
+        holder.nameTextView.setText(goal.getDeadline());
         holder.checkboxView.setChecked(goal.isCompleted());
         holder.checkboxView.setText(goal.getName());
+        holder.checkboxView.setTag(goal.getId());
+        System.out.println(goal.getId());
     }
 
     @Override

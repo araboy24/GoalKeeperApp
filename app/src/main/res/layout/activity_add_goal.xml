@@ -40,7 +40,7 @@
     <EditText
         android:background="#30ffffff"
         android:padding="15dp"
-        android:hint="Deadline (MM/DD/YYYY)"
+        android:hint="Deadline (YYYY/MM/DD)"
         android:textColorHint="@color/teal_700"
         android:id="@+id/deadline"
         android:layout_width="match_parent"
