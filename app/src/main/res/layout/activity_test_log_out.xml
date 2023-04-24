@@ -7,7 +7,19 @@
     tools:context=".TestLogOutActivity"
     android:gravity="center"
     android:orientation="vertical">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_name"
+        android:layout_below="@id/log_out"
+        android:background="#311111"
+        android:hint="Name"
 
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:padding="20dp"
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,6 +33,12 @@
         android:text="Log out"
         android:id="@+id/log_out"
         android:layout_below="@id/user_details"/>
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Submit Name"
+    android:id="@+id/submit_name"
+    android:layout_below="@id/edit_name"/>
 
 
 </RelativeLayout>
