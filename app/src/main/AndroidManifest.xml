@@ -17,6 +17,9 @@
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
+            android:name=".ProfileSettings"
+            android:exported="false" />
+        <activity
             android:name=".AddGoalActivity"
             android:exported="false" />
         <activity

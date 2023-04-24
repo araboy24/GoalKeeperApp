@@ -1,5 +1,6 @@
 package com.example.goalkeeper;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.annotation.NonNull;
@@ -26,49 +27,34 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+public class ProfileSettings extends AppCompatActivity {
+    Button save;
 
-
-
-public class ProfileActivity extends AppCompatActivity {
-
-    Button go_back;
-    Button open_settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Added by Zain
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_profile_settings);
         getSupportActionBar().hide();
         //setContentView(R.layout)
 
 
-        go_back  = findViewById(R.id.back_btn_profile);
+        save  = findViewById(R.id.save_button);
 
-        go_back.setOnClickListener(new View.OnClickListener() {
+        save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), FinalHomeActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        open_settings = findViewById(R.id.edit_button);
-        open_settings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ProfileSettings.class);
+                Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
 
     }
+
+
+
 
 
 
