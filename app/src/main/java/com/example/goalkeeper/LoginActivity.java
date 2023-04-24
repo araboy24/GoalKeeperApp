@@ -31,12 +31,12 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LoginActivity extends AppCompatActivity {
     EditText editTextEmail, editTextPassword;
-    ProgressBar progressBar;
+//    ProgressBar progressBar;
     Button buttonLogin;
     FirebaseAuth mAuth;
     TextView textViewGoReg;
 
-    ImageView googleImg;
+//    ImageView googleImg;
     private GoogleSignInClient client;
 
     @Override
@@ -55,12 +55,12 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_login);
-        googleImg = findViewById(R.id.googlesignin);
+//        googleImg = findViewById(R.id.googlesignin);
         editTextEmail = findViewById(R.id.email);
         editTextPassword = findViewById(R.id.password);
         buttonLogin = findViewById(R.id.loginbtn);
         mAuth = FirebaseAuth.getInstance();
-        progressBar = findViewById(R.id.progress_bar);
+//        progressBar = findViewById(R.id.progress_bar);
         textViewGoReg = findViewById(R.id.go_reg);
 
         GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -69,13 +69,13 @@ public class LoginActivity extends AppCompatActivity {
                 .build();
         client = GoogleSignIn.getClient(this,options);
 
-        googleImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = client.getSignInIntent();
-                startActivityForResult(i,1234);;
-            }
-        });
+//        googleImg.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = client.getSignInIntent();
+//                startActivityForResult(i,1234);;
+//            }
+//        });
         textViewGoReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                progressBar.setVisibility(View.VISIBLE);
+//                progressBar.setVisibility(View.VISIBLE);
                 String email, password, confirmation;
                 email = String.valueOf(editTextEmail.getText().toString());
                 password = String.valueOf(editTextPassword.getText().toString());
@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar.setVisibility(View.GONE);
+//                                progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
                                     Toast.makeText(LoginActivity.this, "Login Successful.",
                                             Toast.LENGTH_SHORT).show();

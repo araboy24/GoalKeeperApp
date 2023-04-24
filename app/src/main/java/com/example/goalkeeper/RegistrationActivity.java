@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class RegistrationActivity extends AppCompatActivity {
     EditText editTextEmail, editTextPassword, editTextConfirmation;
-    ProgressBar progressBar;
+//    ProgressBar progressBar;
     Button buttonReg;
     FirebaseAuth mAuth;
     TextView textViewGoLogin;
@@ -49,7 +49,7 @@ public class RegistrationActivity extends AppCompatActivity {
         editTextConfirmation = findViewById(R.id.password_confirmation);
         buttonReg = findViewById(R.id.signup_btn);
         mAuth = FirebaseAuth.getInstance();
-        progressBar = findViewById(R.id.progress_bar);
+//        progressBar = findViewById(R.id.progress_bar);
         textViewGoLogin = findViewById(R.id.go_login);
 
         textViewGoLogin.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +65,7 @@ public class RegistrationActivity extends AppCompatActivity {
         buttonReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                progressBar.setVisibility(View.VISIBLE);
+//                progressBar.setVisibility(View.VISIBLE);
                 String email, password, confirmation;
                 email = String.valueOf(editTextEmail.getText().toString());
                 password = String.valueOf(editTextPassword.getText().toString());
@@ -90,7 +90,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar.setVisibility(View.GONE);
+//                                progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
                                     Toast.makeText(RegistrationActivity.this, "Authentication Successful.",
                                             Toast.LENGTH_SHORT).show();
