@@ -13,7 +13,7 @@
         android:layout_height="80dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:src="@drawable/baseline_logout_50"
+        android:src="@drawable/baseline_person_75"
         android:contentDescription="Log Out"/>
 
     <TextView
@@ -52,19 +52,19 @@
         android:translationY="640dp" />
 
     <!--Added by Zain -->
-    <Button
-        android:id="@+id/profile_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#FFC107"
-        android:shape="oval"
-        android:text="Profile"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:translationX="120sp"
-        android:translationY="540sp"
-        />
+<!--    <Button-->
+<!--        android:id="@+id/profile_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="#FFC107"-->
+<!--        android:shape="oval"-->
+<!--        android:text="Profile"-->
+<!--        android:textSize="26sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:translationX="120sp"-->
+<!--        android:translationY="540sp"-->
+<!--        />-->
 
 
 

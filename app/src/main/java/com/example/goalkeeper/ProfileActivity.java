@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -38,6 +39,11 @@ public class ProfileActivity extends AppCompatActivity {
     Button go_back;
     Button open_settings;
 
+    FirebaseUser user;
+    FirebaseAuth auth;
+    String userId;
+    TextView firstTV, lastTV;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +51,33 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         getSupportActionBar().hide();
         //setContentView(R.layout)
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+        userId = user.getUid();
+
+        firstTV = findViewById(R.id.first_name);
+        lastTV = findViewById(R.id.last);
+        String first, last;
+        CollectionReference infoCollection = db.collection("Users").document(userId).collection("Info");
+        infoCollection.addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                if (error != null) {
+                    return;
+                }
+                if (value != null && !value.isEmpty()) {
+                    List<DocumentSnapshot> infoDocs = value.getDocuments();
+                    List<Goal> info = new ArrayList<>();
+                    for (DocumentSnapshot document : infoDocs) {
+                        firstTV.setText(document.getString("first"));
+                        lastTV.setText(document.getString("last"));
+                    }
+                }
+
+            }
+        });
 
 
         go_back  = findViewById(R.id.back_btn_profile);

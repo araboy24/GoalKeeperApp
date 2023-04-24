@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bggrad">
+    android:background="@drawable/bg1">
 
 
 
@@ -33,7 +33,7 @@
             />
 
         <EditText
-            android:id="@+id/first_name"
+            android:id="@+id/first_edt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -55,7 +55,7 @@
             />
 
         <EditText
-            android:id="@+id/last"
+            android:id="@+id/last_edt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -68,28 +68,28 @@
             />
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
-            android:layout_marginLeft="-205dp"
-            android:text="Username"
-            android:textSize="28dp"
-            android:textStyle="bold"
-            />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="150dp"-->
+<!--            android:layout_marginLeft="-205dp"-->
+<!--            android:text="Username"-->
+<!--            android:textSize="28dp"-->
+<!--            android:textStyle="bold"-->
+<!--            />-->
 
-        <EditText
-            android:id="@+id/username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/username"
-            android:textColor="@color/black"
-            android:textSize="28dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="155dp"
-            android:inputType="text"
-            />
+<!--        <EditText-->
+<!--            android:id="@+id/username"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:text="@string/username"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="28dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="155dp"-->
+<!--            android:inputType="text"-->
+<!--            />-->
     </LinearLayout>
 
     <Button

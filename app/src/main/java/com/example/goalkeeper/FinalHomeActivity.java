@@ -22,7 +22,6 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class FinalHomeActivity extends AppCompatActivity {
@@ -35,7 +34,7 @@ public class FinalHomeActivity extends AppCompatActivity {
     FirebaseAuth auth;
     String userId;
 
-    ImageView logoutBtn;
+    ImageView profileButton;
 
     private List<Goal> goals;
     private RecyclerView recyclerView;
@@ -50,7 +49,7 @@ public class FinalHomeActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         userId = user.getUid();
-        logoutBtn = findViewById(R.id.profile);
+        profileButton = findViewById(R.id.profile);
 
 
         // Get a reference to the user's "Goals" sub-collection
@@ -98,15 +97,15 @@ public class FinalHomeActivity extends AppCompatActivity {
 
 
 
-        logoutBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+//        profileButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                FirebaseAuth.getInstance().signOut();
+//                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
 
         add_goal = findViewById(R.id.plusButton);
 
@@ -120,8 +119,8 @@ public class FinalHomeActivity extends AppCompatActivity {
         });
 
         //Added by Zain
-        profile = findViewById(R.id.profile_button);
-        profile.setOnClickListener(new View.OnClickListener() {
+
+        profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
