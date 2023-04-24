@@ -31,6 +31,9 @@ import java.util.List;
 
 public class FinalHomeActivity extends AppCompatActivity {
     Button add_goal;
+
+    //Added by Zain
+    Button profile;
     private FirebaseFirestore db;
     FirebaseUser user;
     FirebaseAuth auth;
@@ -108,5 +111,18 @@ public class FinalHomeActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        //Added by Zain
+        profile = findViewById(R.id.profile_button);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
     }
 }
