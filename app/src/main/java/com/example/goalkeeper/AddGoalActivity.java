@@ -18,10 +18,10 @@ public class AddGoalActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private DatePickerDialog datePickerDialog;
 
-    EditText text_goal1;
+    EditText newGoalEdt;
     TextView text_home;
 
-    Button text_status1, submit_1, text_date1;
+    Button text_status1, saveGoalBtn, selectDeadlineBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +31,15 @@ public class AddGoalActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
 
         text_home = (TextView) findViewById(R.id.text_home);
-        text_goal1 = (EditText) findViewById(R.id.text_goal1);
+        newGoalEdt = (EditText) findViewById(R.id.text_goal1);
         //  Date Button was supposed to open up a dialog prompt for calendar but I couldn't get it to work
-        text_date1 = (Button) findViewById(R.id.text_date1);
-        submit_1 = (Button) findViewById(R.id.submit_1);
+        selectDeadlineBtn = (Button) findViewById(R.id.text_date1);
+        saveGoalBtn = (Button) findViewById(R.id.submit_1);
         text_status1 = (Button) findViewById(R.id.text_status1);
 
         //  Adds text listeners for disabling submit1
-        text_goal1.addTextChangedListener(loginTextWatcher);
-        text_date1.addTextChangedListener(loginTextWatcher);
+        newGoalEdt.addTextChangedListener(loginTextWatcher);
+        selectDeadlineBtn.addTextChangedListener(loginTextWatcher);
 
         /*
 
@@ -74,10 +74,10 @@ public class AddGoalActivity extends AppCompatActivity {
 
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            String goalinput1 = text_goal1.getText().toString().trim();
+            String goalinput1 = newGoalEdt.getText().toString().trim();
             //String dateinput1 = text_date1.getText().toString().trim();
 
-            submit_1.setEnabled(!goalinput1.isEmpty());
+            saveGoalBtn.setEnabled(!goalinput1.isEmpty());
         }
 
         @Override
@@ -96,7 +96,7 @@ public class AddGoalActivity extends AppCompatActivity {
 
     //  Changes status of Goal 1
     public void complete_goal1(View view){
-        text_goal1.setText(" ");
+        newGoalEdt.setText(" ");
 
         //  This would be used to clear goal data from goal1
         //  Goal1 = " "
