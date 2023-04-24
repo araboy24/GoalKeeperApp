@@ -8,4 +8,10 @@
     <color name="med_grey">#8E8E8E</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="purple_500">#7c4dff</color>
+    <color name="purple_700">#651fff</color>
+    <color name="teal_200">#80cbc4</color>
+    <color name="teal_700">#00796b</color>
+    <color name="purple_200">#BA68C8</color>
+
 </resources>

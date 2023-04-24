@@ -27,13 +27,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_profile"
-        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:gravity="left"
+
         android:text="username_text"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle=""
-
         tools:layout_editor_absoluteX="20dp"
         tools:layout_editor_absoluteY="90dp" />
 
@@ -42,13 +45,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/username_text"
-        android:layout_margin="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="14dp"
         android:gravity="center"
+
         android:text="@string/username"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle=""
-
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="124dp" />
 
@@ -57,13 +63,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/username"
-        android:layout_margin="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="14dp"
         android:gravity="left"
+
         android:text="first"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle=""
-
         tools:layout_editor_absoluteX="27dp"
         tools:layout_editor_absoluteY="179dp" />
 
@@ -72,13 +81,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/first_text"
-        android:layout_margin="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="14dp"
         android:gravity="center"
+
         android:text="@string/first"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle=""
-
         tools:layout_editor_absoluteX="12dp"
         tools:layout_editor_absoluteY="221dp" />
 
