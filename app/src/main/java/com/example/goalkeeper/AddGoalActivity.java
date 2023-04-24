@@ -17,12 +17,16 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -31,12 +35,11 @@ import java.util.regex.Pattern;
 public class AddGoalActivity extends AppCompatActivity {
 
     private FirebaseFirestore db;
-    private DatePickerDialog datePickerDialog;
 
     EditText newGoalEdt, deadlineEdt;
     TextView text_home;
 
-    Button text_status1, saveGoalBtn, selectDeadlineBtn;
+    Button goHomeBtn, saveGoalBtn, selectDeadlineBtn;
     FirebaseUser user;
     FirebaseAuth auth;
     String userId;
@@ -52,9 +55,20 @@ public class AddGoalActivity extends AppCompatActivity {
         newGoalEdt = (EditText) findViewById(R.id.text_goal1);
         deadlineEdt = (EditText) findViewById(R.id.deadline);
         saveGoalBtn = (Button) findViewById(R.id.submit_1);
+        goHomeBtn = (Button) findViewById(R.id.back_btn);
+
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         userId = user.getUid();
+
+        goHomeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), FinalHomeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         saveGoalBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,10 +91,21 @@ public class AddGoalActivity extends AppCompatActivity {
                     Toast.makeText(AddGoalActivity.this, "Deadline must be (MM/DD/YYYY)", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                SimpleDateFormat format = new SimpleDateFormat("mm/dd/yyyy");
+                Date date;
+                Timestamp timestamp;
+                try {
+                    date = format.parse(deadline);
+                    timestamp = new Timestamp(date);
+                } catch (ParseException e) {
+                    throw new RuntimeException(e);
+                }
                 // Create a new goal document
                 Map<String, Object> goalData = new HashMap<>();
                 goalData.put("name", goal);
-                goalData.put("deadline", deadline);
+                goalData.put("deadline", timestamp);
+                goalData.put("is_completed", false);
 
 // Add the goal document to the "Goals" sub-collection
                 CollectionReference goalsCollection = db.collection("Users").document(userId).collection("Goals");
