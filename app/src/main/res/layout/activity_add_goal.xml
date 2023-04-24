@@ -37,29 +37,48 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/text_date1"
-        android:layout_width= "170dp"
+    <EditText
+        android:background="#30ffffff"
+        android:padding="15dp"
+        android:hint="Deadline (MM/DD/YYYY)"
+        android:textColorHint="@color/teal_700"
+        android:id="@+id/deadline"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="250dp"
-        android:layout_marginEnd="8dp"
-        android:text="Select Deadline"
-        android:textAlignment = "center"
-        android:textSize="25sp"
+        android:layout_below="@id/text_goal1"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="30sp"
         android:textStyle="bold"
-        android:onClick="openDatePicker"
-        android:textColor="@color/blue"
-        android:padding="15dp"
+        android:layout_marginEnd="8dp"
         />
+
+<!--    <Button-->
+<!--        android:id="@+id/text_date1"-->
+<!--        android:layout_width= "170dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="250dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:text="Select Deadline"-->
+<!--        android:textAlignment = "center"-->
+<!--        android:textSize="25sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:onClick="openDatePicker"-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:padding="15dp"-->
+<!--        />-->
 
     <Button
         android:id="@+id/submit_1"
-        android:layout_width= "170dp"
+        android:layout_width= "wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="238dp"
-        android:layout_marginTop="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/deadline"
         android:layout_marginEnd="8dp"
+        android:layout_marginTop="20dp"
         android:text="Save Goal"
         android:textAlignment = "center"
         android:textSize="25sp"
@@ -69,33 +88,36 @@
         android:padding="15dp"
         />
 
-    <Button
-        android:id="@+id/text_status1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_below="@id/submit_1"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="8dp"
-        android:text="Complete Goal"
-        android:onClick="complete_goal1"
-        android:textColor="@color/blue"
-        android:textSize="20dp"
-        android:padding="15dp"
-        />
+<!--    <Button-->
+<!--        android:id="@+id/text_status1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_below="@id/submit_1"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:text="Complete Goal"-->
+<!--        android:onClick="complete_goal1"-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:textSize="20dp"-->
+<!--        android:padding="15dp"-->
+<!--        />-->
 
     <Button
         android:id="@+id/back_btn"
-        android:layout_width="match_parent"
+        android:textStyle="bold"
+
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:text="Back to Home"
-        android:layout_below="@id/text_status1"
+        android:layout_below="@id/submit_1"
         android:textColor="@color/blue"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:padding="15dp"
+        android:layout_centerHorizontal="true"
         />
 
 </RelativeLayout>
