@@ -7,18 +7,27 @@
     tools:context=".FinalHomeActivity"
     android:background="@drawable/bg1">
 
+    <ImageView
+        android:id="@+id/profile"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/baseline_logout_50"
+        android:contentDescription="Log Out"/>
+
     <TextView
         android:id="@+id/text_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="My Goals"
         android:textAlignment="center"
         android:textSize="50sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@id/profile"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -28,80 +37,6 @@
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"/>
 
-
-
-
-    <!--    <EditText-->
-<!--        android:id="@+id/text_goal1"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="8dp"-->
-<!--        android:layout_marginTop="100dp"-->
-<!--        android:layout_marginEnd="8dp"-->
-<!--        android:text="Goal 1"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textSize="30sp"-->
-<!--        android:textStyle="bold" />-->
-
-<!--    <CheckBox-->
-<!--        android:id="@+id/checkBox1"-->
-<!--        android:layout_width="150dp"-->
-<!--        android:layout_height="79dp"-->
-<!--        android:scaleX="1.75"-->
-<!--        android:scaleY="1.75"-->
-<!--        android:text="Ride my bike"-->
-<!--        android:translationX="55dp"-->
-<!--        android:translationY="150dp" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/text_goal2"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="8dp"-->
-<!--        android:layout_marginTop="100dp"-->
-<!--        android:layout_marginEnd="8dp"-->
-<!--        android:text="Goal 2"-->
-<!--        android:textSize="30sp"-->
-<!--        android:textStyle="bold"-->
-<!--        android:translationX="0dp"-->
-<!--        android:translationY="140dp"/>-->
-<!--    &lt;!&ndash;        android:textAlignment="left"&ndash;&gt;-->
-
-
-<!--    <CheckBox-->
-<!--        android:id="@+id/checkBox2"-->
-<!--        android:layout_width="150dp"-->
-<!--        android:layout_height="79dp"-->
-<!--        android:scaleX="1.75"-->
-<!--        android:scaleY="1.75"-->
-<!--        android:text="Clean"-->
-<!--        android:translationX="55dp"-->
-<!--        android:translationY="280dp" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/text_goal3"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="8dp"-->
-<!--        android:layout_marginTop="100dp"-->
-<!--        android:layout_marginEnd="8dp"-->
-<!--        android:text="Goal 3"-->
-<!--        android:textSize="30sp"-->
-<!--        android:textStyle="bold"-->
-<!--        android:translationX="0dp"-->
-<!--        android:translationY="270dp"/>-->
-<!--    &lt;!&ndash;        android:textAlignment="left"&ndash;&gt;-->
-
-
-<!--    <CheckBox-->
-<!--        android:id="@+id/checkBox3"-->
-<!--        android:layout_width="150dp"-->
-<!--        android:layout_height="79dp"-->
-<!--        android:scaleX="1.75"-->
-<!--        android:scaleY="1.75"-->
-<!--        android:text="Cook"-->
-<!--        android:translationX="55dp"-->
-<!--        android:translationY="400dp" />-->
 
     <Button
         android:id="@+id/plusButton"
@@ -114,6 +49,6 @@
         android:textSize="26sp"
         android:textStyle="bold"
         android:translationX="300sp"
-        android:translationY="540sp" />
+        android:translationY="640dp" />
 
 </RelativeLayout>

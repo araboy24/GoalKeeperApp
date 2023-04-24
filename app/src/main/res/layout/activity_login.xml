@@ -50,23 +50,24 @@
         android:inputType="textPassword"
         />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/forgotpass"
-        android:layout_below="@id/go_reg"
-        android:text="Forgot Password?"
-        android:textColor="@color/white"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:layout_marginBottom="20dp"
-        />
+<!--    <TextView-->
+<!--        android:id="@+id/forgotpass"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/go_reg"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:text="Forgot Password?"-->
+<!--        android:textColor="@color/white" />-->
 
     <Button
         android:id="@+id/loginbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/forgotpass"
+        android:layout_below="@id/go_reg"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
