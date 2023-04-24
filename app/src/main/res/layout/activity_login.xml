@@ -31,7 +31,7 @@
         android:background="#30ffffff"
         android:drawableStart="@drawable/baseline_person_24"
         android:drawablePadding="20dp"
-        android:hint="Username"
+        android:hint="Email"
         android:padding="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
@@ -54,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/forgotpass"
-        android:layout_below="@id/password"
+        android:layout_below="@id/go_reg"
         android:text="Forgot Password?"
         android:textColor="@color/white"
         android:layout_centerHorizontal="true"
@@ -87,7 +87,7 @@
         android:id="@+id/go_reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/loginbtn"
+        android:layout_below="@id/password"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
@@ -96,27 +96,5 @@
         android:text="New User? Sign up here"
         android:textColor="@color/white" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/others"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@id/go_reg"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginStart="30dp"-->
-<!--        android:layout_marginTop="30dp"-->
-<!--        android:layout_marginEnd="30dp"-->
-<!--        android:layout_marginBottom="30dp"-->
-<!--        android:text="Sign in With"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:textSize="20dp"-->
-<!--        android:textStyle="bold" />-->
-<!--    <ImageView-->
-<!--        android:layout_width="48dp"-->
-<!--        android:layout_height="48dp"-->
-<!--        android:src="@drawable/googleicon"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_below="@id/others"-->
-<!--        android:id="@+id/googlesignin"-->
-<!--        />-->
 
 </RelativeLayout>

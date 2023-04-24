@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistrationActivity"
+    android:background="@drawable/bggrad">
+
+    <TextView
+        android:id="@+id/text_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:text="Profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/username_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_profile"
+        android:layout_margin="20dp"
+        android:gravity="left"
+        android:text="username_text"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle=""
+
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="90dp" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username_text"
+        android:layout_margin="14dp"
+        android:gravity="center"
+        android:text="@string/username"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle=""
+
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="124dp" />
+
+    <TextView
+        android:id="@+id/first_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username"
+        android:layout_margin="14dp"
+        android:gravity="left"
+        android:text="first"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle=""
+
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="179dp" />
+
+    <TextView
+        android:id="@+id/first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/first_text"
+        android:layout_margin="14dp"
+        android:gravity="center"
+        android:text="@string/first"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle=""
+
+        tools:layout_editor_absoluteX="12dp"
+        tools:layout_editor_absoluteY="221dp" />
+
+    <TextView
+        android:id="@+id/last_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/first"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="14dp"
+        android:gravity="left"
+        android:text="last_text"
+        android:textColor="@color/black"
+
+        android:textSize="25dp"
+        android:textStyle=""
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="294dp" />
+
+    <TextView
+        android:id="@+id/last"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/last_text"
+        android:layout_marginTop="33dp"
+        android:layout_marginBottom="14dp"
+        android:gravity="center"
+        android:text="@string/last"
+        android:textColor="@color/black"
+
+        android:textSize="25dp"
+        android:textStyle=""
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="336dp" />
+
+
+</RelativeLayout>
