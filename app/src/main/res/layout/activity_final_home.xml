@@ -116,4 +116,21 @@
         android:translationX="300sp"
         android:translationY="540sp" />
 
+    <!--Added by Zain -->
+    <Button
+        android:id="@+id/profile_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFC107"
+        android:shape="oval"
+        android:text="Profile"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:translationX="120sp"
+        android:translationY="540sp"
+        />
+
+
+
 </RelativeLayout>
