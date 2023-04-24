@@ -91,17 +91,32 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/save_button"
+        android:id="@+id/edit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/last"
         android:layout_marginTop="550dp"
         android:gravity="center"
-        android:layout_marginLeft="140dp"
+        android:layout_marginLeft="200dp"
         android:onClick="OpenSettings"
         android:text="Edit Profile"
+        android:textColor="@color/black"
         android:textSize="20dp"
         />
+
+    <Button
+        android:id="@+id/back_btn_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginLeft="70dp"
+        android:text="Back"
+        android:textColor="@color/black"
+        android:layout_marginTop="550dp"
+        android:textSize="20dp"
+        android:onClick="go_back"
+        />
+
 
 </RelativeLayout>
 
