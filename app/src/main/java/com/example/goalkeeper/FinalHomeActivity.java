@@ -1,6 +1,5 @@
 package com.example.goalkeeper;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,12 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
@@ -24,7 +21,6 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -39,6 +35,8 @@ public class FinalHomeActivity extends AppCompatActivity {
     FirebaseAuth auth;
     String userId;
 
+    ImageView logoutBtn;
+
     private List<Goal> goals;
     private RecyclerView recyclerView;
     private GoalAdapter adapter;
@@ -52,20 +50,20 @@ public class FinalHomeActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         userId = user.getUid();
+        logoutBtn = findViewById(R.id.profile);
 
 
         // Get a reference to the user's "Goals" sub-collection
         CollectionReference goalsCollection = db.collection("Users").document(userId).collection("Goals");
 
-// Create a query to retrieve all documents in the "Goals" sub-collection
+        // Create a query to retrieve all documents in the "Goals" sub-collection
         Query query = goalsCollection.orderBy("deadline", Query.Direction.ASCENDING);
 
-// Attach a listener to handle the query results
+        // Attach a listener to handle the query results
         query.addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot snapshot, @Nullable FirebaseFirestoreException error) {
                 if (error != null) {
-//                    Log.e(TAG, "Error getting goals: ", error);
                     return;
                 }
 
@@ -79,9 +77,10 @@ public class FinalHomeActivity extends AppCompatActivity {
                     for (DocumentSnapshot document : goalDocuments) {
 
                         String name = document.getString("name");
-                        Date deadline = document.getDate("deadline");
+                        String deadline = document.getString("deadline");
                         boolean isCompleted = document.getBoolean("is_completed");
-                        Goal goal = new Goal(name, deadline, isCompleted);
+                        String id = document.getString("id");
+                        Goal goal = new Goal(name, deadline, isCompleted, id);
                         goals.add(goal);
                     }
 
@@ -99,7 +98,15 @@ public class FinalHomeActivity extends AppCompatActivity {
 
 
 
-
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         add_goal = findViewById(R.id.plusButton);
 

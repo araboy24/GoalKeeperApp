@@ -1,32 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#30ffffff"
+    android:layout_margin="5dp">
 
-    <TextView
-        android:id="@+id/goal_deadline"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?attr/textAppearanceListItem"
         android:paddingStart="?attr/listPreferredItemPaddingStart"
-        android:paddingEnd="?attr/listPreferredItemPaddingEnd"
-        android:textSize="30sp"
-        android:text="10/22/2020"/>
-    <CheckBox
-        android:textColor="@color/black"
-        android:id="@+id/goal_checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:text="Cook gegggger"
-        android:layout_below="@id/goal_deadline"
-        android:layout_marginStart="20dp"
-    />
+        android:paddingEnd="?attr/listPreferredItemPaddingEnd">
 
+        <TextView
+            android:id="@+id/goal_deadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="30sp"
+            android:text="10/22/2020"/>
 
+        <CheckBox
+            android:id="@+id/goal_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/goal_deadline"
+            android:layout_marginStart="20dp"
+            android:textSize="30sp"
+            android:text="Cook"
+            android:buttonTint="@color/blue"
+            android:textColor="@color/black"/>
 
-
-
-</RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>

@@ -5,35 +5,35 @@ import java.util.Date;
 
 public class Goal {
     private String name;
-    private Date deadline;
+    private String deadline, id;
     private boolean isCompleted;
 
-    public Goal(String name, Date deadline, boolean isCompleted) {
+    public Goal(String name, String deadline, boolean isCompleted, String id) {
         this.name = name;
         this.deadline = deadline;
         this.isCompleted = isCompleted;
-
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
+    public String getId() {
+        return id;
+    }
 
-    public Date getDeadline() {
+
+    public String getDeadline() {
         return deadline;
     }
 
-    public String getDeadlineString() {
-        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
-        return formatter.format(deadline);
-    }
 
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setDeadline(Date deadline) {
+    public void setDeadline(String deadline) {
         this.deadline = deadline;
     }
 
