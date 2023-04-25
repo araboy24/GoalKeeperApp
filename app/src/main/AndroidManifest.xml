@@ -26,9 +26,6 @@
             android:name=".FinalHomeActivity"
             android:exported="false" />
         <activity
-            android:name=".TestLogOutActivity"
-            android:exported="false" />
-        <activity
             android:name=".RegistrationActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

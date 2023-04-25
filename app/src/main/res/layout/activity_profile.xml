@@ -55,6 +55,15 @@
 
     <include layout = "@layout/activity_top"/>
 
+    <ImageView
+        android:id="@+id/logoutImg"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/baseline_logout_24"
+        android:contentDescription="Log Out"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,6 +71,7 @@
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:layout_marginTop="250dp"
+        android:id="@+id/lin_top"
         >
 
 
@@ -87,12 +97,17 @@
             android:textSize="25dp"
             android:layout_marginLeft="25dp"
             />
-
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lin_top"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="75dp"
-            android:layout_marginLeft="-200dp"
             android:text="Last Name"
             android:textSize="28dp"
             android:textStyle="bold"
@@ -106,7 +121,6 @@
             android:text="@string/last"
             android:textColor="@color/black"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="75dp"
 
             android:textSize="28dp"
             />

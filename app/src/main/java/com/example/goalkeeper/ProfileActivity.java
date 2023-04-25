@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -36,6 +37,8 @@ import java.util.List;
 
 public class ProfileActivity extends AppCompatActivity {
 
+    ImageView logOutBtn;
+
     Button go_back;
     Button open_settings;
 
@@ -51,6 +54,7 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         getSupportActionBar().hide();
         //setContentView(R.layout)
+        logOutBtn = findViewById(R.id.logoutImg);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
@@ -61,6 +65,16 @@ public class ProfileActivity extends AppCompatActivity {
         lastTV = findViewById(R.id.last);
         String first, last;
         CollectionReference infoCollection = db.collection("Users").document(userId).collection("Info");
+
+        logOutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         infoCollection.addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {

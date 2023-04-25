@@ -12,13 +12,13 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class HomeFragment  extends AppCompatActivity {
-    private FirebaseFirestore db;
+//    private FirebaseFirestore db;
     private DatePickerDialog datePickerDialog;
 
     EditText text_goal1;
@@ -30,7 +30,7 @@ public class HomeFragment  extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_home);
-        db = FirebaseFirestore.getInstance();
+//        db = FirebaseFirestore.getInstance();
 
         text_home = (TextView) findViewById(R.id.text_home);
         text_goal1 = (EditText) findViewById(R.id.text_goal1);

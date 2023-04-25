@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:src="@drawable/baseline_person_75"
-        android:contentDescription="Log Out"/>
+        android:contentDescription="Profile"/>
 
     <TextView
         android:id="@+id/text_home"
